@@ -1,0 +1,23 @@
+تشخیص لبه‌ها
+شما به‌منظور تشخیص لبه‌ها در تصویر از طریق پردازش تصویر و پایتون (Python) می‌توانید از متد Canny() از cv2 استفاده کنید که آشکارساز لبه Canny را پیاده‌سازی می‌کند. آشکارساز لبه Canny همچنین به‌عنوان آشکارساز بهینه نیز شناخته می‌شود.
+
+سینتکس Canny() مانند زیر است:
+
+ 
+cv2.Canny(image, minVal, maxVal)
+در اینجا minVal و maxVal مقادیر کمینه و بیشینه، مقادیر شدت روشنایی خاکستری متناظر است.
+
+کد زیر را در نظر بگیرید:
+
+import cv2
+from matplotlib import pyplot as plt
+%matplotlib inline
+
+img = cv2.imread("ImageProcessingSample.jpg")
+edge_img = cv2.Canny(img,100,200)
+plt.imshow(cv2.cvtColor(edge_img, cv2.COLOR_BGR2RGB))
+plt.show()
+خروجی همانند زیر خواهد بود:
+
+edge detection by opencv and python
+
